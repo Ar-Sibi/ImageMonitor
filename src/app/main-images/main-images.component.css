@@ -1,0 +1,76 @@
+
+@media only screen and (min-width:960px) {
+    #a1 {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        top: 5%;
+    }
+    #a2 {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 33%;
+        top: 40%;
+    }
+    #a3 {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 66%;
+        top: 40%;
+    }
+    #a4 {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 40%;
+        bottom: 5%;
+    }
+    #a5 {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 60%;
+        bottom: 5%;
+    }
+}
+
+@media only screen and (max-width:960px) {
+    #a1 {
+        display:block;
+        transform: translateX(-50%);
+        left: 50%;
+        position: relative;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+    #a2 {
+        display:block;
+        left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+    #a3 {
+        display:block;
+        transform: translateX(-50%);
+        left: 50%;
+        position: relative;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+    #a4 {
+        display:block;
+        transform: translateX(-50%);
+        left: 50%;
+        position: relative;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+    #a5 {
+        display:block;
+        transform: translateX(-50%);
+        left: 50%;
+        position: relative;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+}
