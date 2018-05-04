@@ -1,4 +1,4 @@
-<div class="ui card mytable">
+<div *ngIf="countArray.length" class="ui card mytable">
   <table class="ui celled table">
     <thead>
       <tr>
@@ -22,16 +22,13 @@
       <tr>
         <th colspan="4">
           <div class="ui right floated pagination menu">
-            <a class="icon item">
-              <i class="left chevron icon"></i>
-            </a>
-            <a class="item" (click)="page(num)"*ngFor="let num of countArray">{{num+1}}</a>
-            <a class="icon item">
-              <i class="right chevron icon"></i>
-            </a>
+            <a class="item" (click)="page(num)" *ngFor="let num of countArray">{{num+1}}</a>
           </div>
         </th>
       </tr>
     </tfoot>
   </table>
+</div>
+<div *ngIf="!countArray.length" class="ui floating negative message mytable">
+  <p>No Activity found for given url</p>
 </div>
