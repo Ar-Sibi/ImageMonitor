@@ -1,6 +1,6 @@
 # ImageStalker
 
-run node /server/index.js to start the server
+run node server/index.js to start the server
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
