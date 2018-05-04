@@ -15,19 +15,18 @@ const baseUrl = 'http://localhost:3000/api';
 export class MonitorService {
 
   constructor(private http: HttpClient) { }
-  getActivity(user: string): Observable<string[]> {
+  getActivity(user: string): Observable<Activity[]> {
     let url = `${baseUrl}/${user}/getActivities`;
-    return this.http.get(url).map(flat => flat as Object[])
-      .map(activities => {
-        let x = activities.map(
-          activity => `The user ${activity['name']} performed action ${activity['action']}` 
-          + ((activity['action'] === 'hover') 
-            ? ` from ${activity['starttime']} to ${activity['endtime']}` 
-            : ` at ${activity['starttime']}`)
-          + ` on image no.${activity['target']}`);
-        return x;
-      });
+    return this.http.get(url).map(result => result as Activity[])
+  }
+  getCount(user:string): Observable<Number>{
+    let url = `${baseUrl}/${user}/getCount`;
+    return this.http.get(url).map(result => result['count'])
+  }
 
+  getActivityPaginated(user:string,start:number){
+    let url = `${baseUrl}/${user}/getActivities/${start}`;
+    return this.http.get(url).map(result => result as Activity[])
   }
   postActivity(user: string, activity: Activity) {
     this.getActivity(user);
