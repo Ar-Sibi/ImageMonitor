@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MonitorService } from '../monitor.service';
 import { Activity } from '../activity';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { Location } from '@angular/common';
 @Component({
   selector: 'app-main-images',
@@ -16,6 +16,7 @@ export class MainImagesComponent implements OnInit {
 
   constructor(private imageMonitor: MonitorService,
     private route:ActivatedRoute,
+    private router:Router,
     private location:Location
   ) { }
 
@@ -28,18 +29,14 @@ export class MainImagesComponent implements OnInit {
       starttime:  this.enterTime,
       target:id
     }
-    console.log(this.name);
-    console.log(activity);
     this.imageMonitor.postActivity(this.name,activity)
   }
   enterAction(id: number) {
-    console.log("wtgasdasd");
     this.enterTime=new Date().toUTCString();
     this.isHovering=true;
   }
 
   exitAction(id: number) {
-    console.log("wtgasdasdasdlksandklasndklnaklsdn");
     if(this.isHovering){
       let activity:Activity ={
         action:"hover",
@@ -51,6 +48,12 @@ export class MainImagesComponent implements OnInit {
       this.isHovering=false;
       this.imageMonitor.postActivity(this.name,activity)
     }
+  }
+  redirectToAdmin(){
+    this.router.navigateByUrl(`/${this.route.snapshot.paramMap.get('id')}/admin`);
+  }
+  redirectToHome(){
+    this.router.navigateByUrl(`/`);
   }
   ngOnInit() {
     this.name=this.route.snapshot.paramMap.get('id');

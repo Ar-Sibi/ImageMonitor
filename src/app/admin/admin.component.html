@@ -21,14 +21,22 @@
     <tfoot>
       <tr>
         <th colspan="4">
-          <div class="ui right floated pagination menu">
+          <div class="ui right inverted floated pagination menu">
             <a class="item" (click)="page(num)" *ngFor="let num of countArray">{{num+1}}</a>
+          </div>
+          <div class="ui left floated icon buttons admin">
+            <button class="ui icon button black" (click)="redirectToImages()">
+              <i class="chevron left icon"></i>
+            </button>
+            <button class="ui icon button black" (click)="redirectToHome()">
+                <i class="home icon"></i>
+              </button>
           </div>
         </th>
       </tr>
     </tfoot>
   </table>
 </div>
-<div *ngIf="!countArray.length" class="ui floating negative message mytable">
+<div *ngIf="!countArray.length&&isLoaded" class="ui floating massive negative message mytable">
   <p>No Activity found for given url</p>
 </div>

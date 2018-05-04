@@ -1,8 +1,9 @@
 <div class="ui card" id="name">
   <div class="content">
-    <div class="ui large two wide input">
+    <div class="ui large fluid two wide input">
       <input [(ngModel)]="inputString" placeholder="Enter String" />
     </div>
   </div>
-  <button class="ui button green" (click)="go()">Go</button>
+  <button *ngIf="inputString"class="ui fluid button green" (click)="go()">Go</button>
+  <button *ngIf="!inputString"class="ui fluid disabled button green" (click)="go()">Go</button>
 </div>

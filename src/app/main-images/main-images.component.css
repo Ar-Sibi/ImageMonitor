@@ -30,6 +30,12 @@
         left: 60%;
         bottom: 5%;
     }
+    .admin{
+        position: absolute;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
+    }
 }
 
 @media only screen and (max-width:960px) {
@@ -72,5 +78,13 @@
         position: relative;
         padding-bottom: 5px;
         padding-top: 5px;
+    }
+    .admin{
+        display:block;
+        position: relative;
+        padding-bottom: 20px;
+        padding-top:15px;
+        transform: translateX(-50%);
+        left: 50%;
     }
 }
