@@ -24,7 +24,7 @@ routes.post('/api/:id/addActivity', (req, res, next) => {
   activity.addActivity(
       req.params.id,
       req.body,
-      function(){});
+      function(){res.send({})});
 })
 
 module.exports = routes;

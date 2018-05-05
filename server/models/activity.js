@@ -35,5 +35,6 @@ module.exports.addActivity = (name, activityItem, callback) => {
   dbUtils.getDb().collection('activity').insertOne(activityItem, function (err, res) {
     if (err) throw err;
     console.log("1 document inserted");
+    callback();
   });
 }
