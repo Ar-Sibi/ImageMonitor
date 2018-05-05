@@ -1,8 +1,20 @@
-.mytable{
-    top:50%;
-    left:50%;
-    width:65%;
-    transform: translate(-50%,-50%);
-    position: relative;
-    text-align: center;
+@media only screen and (min-width:700px) {
+    .mytable {
+        top: 50%;
+        left: 50%;
+        width: 65%;
+        transform: translate(-50%, -50%);
+        position: relative;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width:700px) {
+    .mytable {
+        top: 40px !important;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        text-align: center;
+    }
 }

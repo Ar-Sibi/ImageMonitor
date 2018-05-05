@@ -1,4 +1,4 @@
-# ImageStalker
+# ImageMonitor
 
 run node server/index.js to start the server
 
