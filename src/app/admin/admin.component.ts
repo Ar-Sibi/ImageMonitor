@@ -9,6 +9,8 @@ import { Activity } from '../activity';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  name:string;
+  currentPage=-1;
   activities: Activity[];
   isLoaded=false;
   countArray: number[] = [];
@@ -19,11 +21,26 @@ export class AdminComponent implements OnInit {
   ) {
   }
   page(pageno) {
-    this.imageMonitor.getActivityPaginated(this.route.snapshot.paramMap.get('id'), 10 * pageno).subscribe(activities => { this.activities = activities; console.log(activities); return activities });
+    this.currentPage=pageno+1;
+    this.imageMonitor.getActivityPaginated(this.name, 10 * pageno).subscribe(activities => { this.activities = activities; console.log(activities); return activities });
+  }
+
+  previousPage(){
+    if(this.currentPage>1){
+      this.currentPage--;
+      this.page(this.currentPage-1);
+    }
+  }
+
+  nextPage(){
+    console.log(this.countArray.length);
+    if(this.currentPage<=this.countArray.length-1){
+      this.page(this.currentPage);
+    }
   }
   
   redirectToImages(){
-    this.router.navigateByUrl(`/${this.route.snapshot.paramMap.get('id')}`)
+    this.router.navigateByUrl(`/${this.name}`)
   }
 
   redirectToHome(){
@@ -31,8 +48,9 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.imageMonitor.getCount(this.route.snapshot.paramMap.get('id')).subscribe(num => { console.log(num); this.countArray = Array.apply(null, { length: ((+num - 1) / 10) + 1 }).map(Number.call, Number) })
-    this.imageMonitor.getActivityPaginated(this.route.snapshot.paramMap.get('id'), 0).subscribe(activities => { this.activities = activities; console.log(activities);this.isLoaded=true; return activities });
+    this.name=this.route.snapshot.paramMap.get('id');
+    this.imageMonitor.getCount(this.name).subscribe(num => { console.log(num); this.countArray = Array.apply(null, { length: ((+num - 1) / 10) + 1 }).map(Number.call, Number) })
+    this.imageMonitor.getActivityPaginated(this.name, 0).subscribe(activities => { this.activities = activities ; this.currentPage=1; console.log(activities);this.isLoaded=true; return activities });
   }
 
 }

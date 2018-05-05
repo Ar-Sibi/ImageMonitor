@@ -1,90 +1,111 @@
-
-@media only screen and (min-width:960px) {
-    #a1 {
-        position: absolute;
-        transform: translateX(-50%);
-        left: 50%;
-        top: 5%;
-    }
-    #a2 {
-        position: absolute;
-        transform: translateX(-50%);
-        left: 33%;
-        top: 40%;
-    }
-    #a3 {
-        position: absolute;
-        transform: translateX(-50%);
-        left: 66%;
-        top: 40%;
-    }
-    #a4 {
-        position: absolute;
-        transform: translateX(-50%);
-        left: 40%;
-        bottom: 5%;
-    }
-    #a5 {
-        position: absolute;
-        transform: translateX(-50%);
-        left: 60%;
-        bottom: 5%;
-    }
-    .admin{
-        position: absolute;
-        left:50%;
-        top:50%;
-        transform: translate(-50%,-50%);
-    }
+@media only screen and (min-width:760px) {
+  .img-container {
+    position: relative;
+    max-width: 1060px;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+  }
+  #a1 {}
+  #a2 {}
+  #a3 {}
+  #a4 {}
+  #a5 {}
+  .admin {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-@media only screen and (max-width:960px) {
-    #a1 {
-        display:block;
-        transform: translateX(-50%);
-        left: 50%;
-        position: relative;
-        padding-bottom: 5px;
-        padding-top: 5px;
-    }
-    #a2 {
-        display:block;
-        left: 50%;
-        transform: translateX(-50%);
-        position: relative;
-        padding-bottom: 5px;
-        padding-top: 5px;
-    }
-    #a3 {
-        display:block;
-        transform: translateX(-50%);
-        left: 50%;
-        position: relative;
-        padding-bottom: 5px;
-        padding-top: 5px;
-    }
-    #a4 {
-        display:block;
-        transform: translateX(-50%);
-        left: 50%;
-        position: relative;
-        padding-bottom: 5px;
-        padding-top: 5px;
-    }
-    #a5 {
-        display:block;
-        transform: translateX(-50%);
-        left: 50%;
-        position: relative;
-        padding-bottom: 5px;
-        padding-top: 5px;
-    }
-    .admin{
-        display:block;
-        position: relative;
-        padding-bottom: 20px;
-        padding-top:15px;
-        transform: translateX(-50%);
-        left: 50%;
-    }
+@media only screen and (max-width:760px) {
+  .img-container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1060px;
+  }
+  #a1 {
+    height: 200px !important;
+    width: 200px !important;
+  }
+  #a2 {
+    height: 200px !important;
+    width: 200px !important;
+  }
+  #a3 {
+    height: 200px !important;
+    width: 200px !important;
+  }
+  #a4 {
+    height: 200px !important;
+    width: 200px !important;
+  }
+  #a5 {
+    height: 200px !important;
+    width: 200px !important;
+  }
+  .admin {
+    display: block;
+    position: relative;
+    padding-bottom: 20px;
+    padding-top: 15px;
+    transform: translateX(-50%) rotate(4deg);
+    left: 50%;
+  }
+  .item div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+#a1 {
+  transform: rotate(4deg);
+}
+
+#a1:hover {
+  transform: rotate(5deg);
+}
+
+#a2 {
+  transform: rotate(-3deg);
+}
+
+#a2:hover {
+  transform: rotate(-4deg);
+}
+
+#a3 {
+  transform: rotate(4deg);
+}
+
+#a3:hover {
+  transform: rotate(5deg);
+}
+
+#a4 {
+  transform: rotate(-5deg);
+}
+
+#a4:hover {
+  transform: rotate(-6deg);
+}
+
+#a5 {
+  transform: rotate(4deg);
+}
+
+#a5:hover {
+  transform: rotate(5deg);
+}
+
+img{
+    border-style: solid !important;
+    border-width: 10px !important;
+    border-bottom-width: 25px !important;
+    border-color: white !important;
 }

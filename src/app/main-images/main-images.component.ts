@@ -50,14 +50,13 @@ export class MainImagesComponent implements OnInit {
     }
   }
   redirectToAdmin(){
-    this.router.navigateByUrl(`/${this.route.snapshot.paramMap.get('id')}/admin`);
+    this.router.navigateByUrl(`/${this.name}/admin`);
   }
   redirectToHome(){
     this.router.navigateByUrl(`/`);
   }
   ngOnInit() {
     this.name=this.route.snapshot.paramMap.get('id');
-    console.log(this.name);
   }
 
 }
